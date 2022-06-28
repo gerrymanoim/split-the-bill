@@ -269,11 +269,11 @@
             let params = new Map();
             if (window.location.href.includes("?")) {
 
-                let raw_params = window.location.href.split('?')[1].split('|');
+                let raw_params = decodeURIComponent(window.location.href.split('?')[1]).split('|');
                 for (n = 0; n < raw_params.length; n++) {
                     // we always drop submit value so extra index up in elem
                     let elem = elements[n + 1];
-                    let value = decodeURIComponent(raw_params[n]);
+                    let value = raw_params[n];
                     elem.value = value
                     params.set(elem.name, value);
                 }
@@ -321,9 +321,10 @@
 
             full_total += person_total;
         }
-
-        document.getElementById("item-total").innerHTML = "Item Total: " + item_total;
-        document.getElementById("full-total").innerHTML = "Full Total: " + full_total;
+        if (full_total > 0) {
+            document.getElementById("item-total").innerHTML = "Item Total: " + item_total;
+            document.getElementById("full-total").innerHTML = "Full Total: " + full_total;
+        }
 
 
 
