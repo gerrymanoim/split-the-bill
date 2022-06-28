@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Split The Bill</title>
+</head>
+
+<body>
+    <div class="content" style="display: flex;">
+        <div class="column">
+            <form id="input-form" onsubmit="event.preventDefault(); handle_form_submit();">
+                <input type="submit" value="Submit" id="submit" name="submit"><br>
+                <!-- TODO get rid of thsi -->
+                <input type="hidden" name="n-items" id="n-items" value="30">
+                <label for="title">Form Name:</label> <input type="text" name="title" id="title"><br>
+                <!-- TODO date picker -->
+                <label for="tax">Tax:</label> <input type="number" name="tax" id="tax" step="0.01"><br>
+                <label for="tip">Tip:</label> <input type="number" name="tip" id="tip" step="0.01"><br>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Split</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="item-0" id="item-0"></td>
+                        <td><input type="number" name="price-0" id="price-0" step="0.01"></td>
+                        <td><input type="text" name="split-0" id="split-0"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-1" id="item-1"></td>
+                        <td><input type="number" name="price-1" id="price-1" step="0.01"></td>
+                        <td><input type="text" name="split-1" id="split-1"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-2" id="item-2"></td>
+                        <td><input type="number" name="price-2" id="price-2" step="0.01"></td>
+                        <td><input type="text" name="split-2" id="split-2"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-3" id="item-3"></td>
+                        <td><input type="number" name="price-3" id="price-3" step="0.01"></td>
+                        <td><input type="text" name="split-3" id="split-3"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-4" id="item-4"></td>
+                        <td><input type="number" name="price-4" id="price-4" step="0.01"></td>
+                        <td><input type="text" name="split-4" id="split-4"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-5" id="item-5"></td>
+                        <td><input type="number" name="price-5" id="price-5" step="0.01"></td>
+                        <td><input type="text" name="split-5" id="split-5"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-6" id="item-6"></td>
+                        <td><input type="number" name="price-6" id="price-6" step="0.01"></td>
+                        <td><input type="text" name="split-6" id="split-6"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-7" id="item-7"></td>
+                        <td><input type="number" name="price-7" id="price-7" step="0.01"></td>
+                        <td><input type="text" name="split-7" id="split-7"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-8" id="item-8"></td>
+                        <td><input type="number" name="price-8" id="price-8" step="0.01"></td>
+                        <td><input type="text" name="split-8" id="split-8"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-9" id="item-9"></td>
+                        <td><input type="number" name="price-9" id="price-9" step="0.01"></td>
+                        <td><input type="text" name="split-9" id="split-9"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-10" id="item-10"></td>
+                        <td><input type="number" name="price-10" id="price-10" step="0.01"></td>
+                        <td><input type="text" name="split-10" id="split-10"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-11" id="item-11"></td>
+                        <td><input type="number" name="price-11" id="price-11" step="0.01"></td>
+                        <td><input type="text" name="split-11" id="split-11"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-12" id="item-12"></td>
+                        <td><input type="number" name="price-12" id="price-12" step="0.01"></td>
+                        <td><input type="text" name="split-12" id="split-12"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-13" id="item-13"></td>
+                        <td><input type="number" name="price-13" id="price-13" step="0.01"></td>
+                        <td><input type="text" name="split-13" id="split-13"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-14" id="item-14"></td>
+                        <td><input type="number" name="price-14" id="price-14" step="0.01"></td>
+                        <td><input type="text" name="split-14" id="split-14"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-15" id="item-15"></td>
+                        <td><input type="number" name="price-15" id="price-15" step="0.01"></td>
+                        <td><input type="text" name="split-15" id="split-15"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-16" id="item-16"></td>
+                        <td><input type="number" name="price-16" id="price-16" step="0.01"></td>
+                        <td><input type="text" name="split-16" id="split-16"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-17" id="item-17"></td>
+                        <td><input type="number" name="price-17" id="price-17" step="0.01"></td>
+                        <td><input type="text" name="split-17" id="split-17"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-18" id="item-18"></td>
+                        <td><input type="number" name="price-18" id="price-18" step="0.01"></td>
+                        <td><input type="text" name="split-18" id="split-18"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-19" id="item-19"></td>
+                        <td><input type="number" name="price-19" id="price-19" step="0.01"></td>
+                        <td><input type="text" name="split-19" id="split-19"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-20" id="item-20"></td>
+                        <td><input type="number" name="price-20" id="price-20" step="0.01"></td>
+                        <td><input type="text" name="split-20" id="split-20"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-21" id="item-21"></td>
+                        <td><input type="number" name="price-21" id="price-21" step="0.01"></td>
+                        <td><input type="text" name="split-21" id="split-21"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-22" id="item-22"></td>
+                        <td><input type="number" name="price-22" id="price-22" step="0.01"></td>
+                        <td><input type="text" name="split-22" id="split-22"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-23" id="item-23"></td>
+                        <td><input type="number" name="price-23" id="price-23" step="0.01"></td>
+                        <td><input type="text" name="split-23" id="split-23"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-24" id="item-24"></td>
+                        <td><input type="number" name="price-24" id="price-24" step="0.01"></td>
+                        <td><input type="text" name="split-24" id="split-24"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-25" id="item-25"></td>
+                        <td><input type="number" name="price-25" id="price-25" step="0.01"></td>
+                        <td><input type="text" name="split-25" id="split-25"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-26" id="item-26"></td>
+                        <td><input type="number" name="price-26" id="price-26" step="0.01"></td>
+                        <td><input type="text" name="split-26" id="split-26"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-27" id="item-27"></td>
+                        <td><input type="number" name="price-27" id="price-27" step="0.01"></td>
+                        <td><input type="text" name="split-27" id="split-27"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-28" id="item-28"></td>
+                        <td><input type="number" name="price-28" id="price-28" step="0.01"></td>
+                        <td><input type="text" name="split-28" id="split-28"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><input type="text" name="item-29" id="item-29"></td>
+                        <td><input type="number" name="price-29" id="price-29" step="0.01"></td>
+                        <td><input type="text" name="split-29" id="split-29"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="column">
+            <h1 id="output-title"></h1>
+            <h2 id="item-total"></h2>
+            <h2 id="full-total"></h3>
+            <table name="output-table" id="output-table">
+                <tr>
+                    <th>Split</th>
+                    <th>Total</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById("input-form");
+        function handle_form_submit() {
+            out = "";
+            let elements = form.elements;
+            for (const elem of elements) {
+                if (elem.name != "submit") {
+                    if (elem.value === "") {
+                        //nothing else to encode don't bother
+                        break;
+                    }
+                    out += elem.value;
+                    out += '|';
+                }
+            }
+            let url = window.location.href.split('?')[0] + "?" + out
+            window.location = url;
+        }
+
+        function decode_submitted_form() {
+            let elements = form.elements;
+            let params = new Map();
+            if (window.location.href.includes("?")) {
+
+                let raw_params = window.location.href.split('?')[1].split('|');
+                for (n = 0; n < raw_params.length; n++) {
+                    // we always drop submit value so extra index up in elem
+                    let elem = elements[n + 1];
+                    let value = decodeURIComponent(raw_params[n]);
+                    elem.value = value
+                    params.set(elem.name, value);
+                }
+            }
+            return params
+        }
+
+        let params = decode_submitted_form()
+
+        // set title
+        document.getElementById("output-title").innerHTML = params.get("title") ?? "";
+
+        let tax = parseFloat(params.get("tax"));
+        let tip = parseFloat(params.get("tip"));
+        let n_items = parseInt(params.get("n-items"));
+
+        // Perform all the item splits
+        const totals = new Map();
+        let item_total = 0;
+        for (let n_current = 0; n_current < n_items; n_current++) {
+            if (params.get("item-" + n_current) === "") {
+                // done parsing - don't keep going through empty stuff
+                break;
+            }
+            let split = params.get("split-" + n_current);
+            let price_per_share = parseInt(params.get("price-" + n_current)) / split.length;
+            for (const c of split) {
+                totals.set(c.toUpperCase(), (totals.get(c.toUpperCase()) ?? 0) + price_per_share);
+                item_total += price_per_share;
+            }
+        }
+
+        // Add proportional tax and tip as we modify the output table
+        let output_table = document.getElementById("output-table");
+        let full_total = 0;
+        for (const [key, value] of totals) {
+            let fraction_of_total = value / item_total;
+            let person_total = value + (fraction_of_total * tax) + (fraction_of_total * tip);
+
+            let person_row = output_table.insertRow();
+            let split_cell = person_row.insertCell();
+            split_cell.appendChild(document.createTextNode(key));
+            let total_cell = person_row.insertCell();
+            total_cell.appendChild(document.createTextNode(person_total));
+
+            full_total += person_total;
+        }
+
+        document.getElementById("item-total").innerHTML = "Item Total: " + item_total;
+        document.getElementById("full-total").innerHTML = "Full Total: " + full_total;
+
+
+
+    </script>
+</body>
+
+</html>
