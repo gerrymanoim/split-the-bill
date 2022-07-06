@@ -60,7 +60,7 @@
                 <!-- TODO get rid of thsi -->
                 <input type="hidden" name="n-items" id="n-items" value="30">
                 <label for="title">Title:</label> <input type="text" name="title" id="title" autofocus><br>
-                <!-- TODO date picker -->
+                <label for="date">Date:</label> <input type="date" name="date" id="date"><br>
                 <label for="tax">Tax:</label> <input type="number" name="tax" id="tax" step="0.01"><br>
                 <label for="tip">Tip:</label> <input type="number" name="tip" id="tip" step="0.01"><br>
                 <br>
@@ -322,7 +322,7 @@
         function decode_submitted_form() {
             let elements = form.elements;
             let params = new Map();
-            if (window.location.href.includes("?")) {
+            if (window.location.href.includes("?") && window.location.href.split("?")[1].length > 0) {
 
                 let raw_params = decodeURIComponent(window.location.href.split('?')[1]).split('|');
                 for (n = 0; n < raw_params.length; n++) {
@@ -332,6 +332,9 @@
                     elem.value = value
                     params.set(elem.name, value);
                 }
+            } else {
+                // nice default for the date picker
+                document.getElementById("date").valueAsDate = new Date()
             }
             return params
         }
@@ -339,7 +342,7 @@
         let params = decode_submitted_form()
 
         // set title
-        document.getElementById("output-title").innerHTML = params.get("title") ?? "";
+        document.getElementById("output-title").innerHTML = (params.get("title") ?? "") + " " + (params.get("date") ?? "");
 
         let tax = parseFloat(params.get("tax"));
         let tip = parseFloat(params.get("tip"));
