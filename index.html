@@ -357,7 +357,7 @@
                 break;
             }
             let split = params.get("split-" + n_current);
-            let price_per_share = parseInt(params.get("price-" + n_current)) / split.length;
+            let price_per_share = parseFloat(params.get("price-" + n_current)) / split.length;
             for (const c of split) {
                 totals.set(c.toUpperCase(), (totals.get(c.toUpperCase()) ?? 0) + price_per_share);
                 item_total += price_per_share;
